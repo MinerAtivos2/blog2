@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Tag } from "lucide-react";
-import type { BlogPost } from "@/data/posts";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { BlogPost } from "@/data/posts";
+import { useNavigate } from "react-router-dom";
 
 interface PostCardProps {
   post: BlogPost;
@@ -14,9 +14,9 @@ export const PostCard = ({ post }: PostCardProps) => {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "short",
       year: "numeric",
+      month: "long",
+      day: "numeric"
     });
   };
 
@@ -38,14 +38,14 @@ export const PostCard = ({ post }: PostCardProps) => {
         <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
           <Calendar className="h-4 w-4" />
           <span>{formatDate(post.date)}</span>
-          <span className="mx-1">•</span>
+          <span className="mx-2">•</span>
           <Clock className="h-4 w-4" />
           <span>{post.readTime}</span>
         </div>
-        <CardTitle className="text-2xl group-hover:text-primary transition-colors line-clamp-2">
+        <CardTitle className="text-2xl group-hover:text-primary transition-colors">
           {post.title}
         </CardTitle>
-        <CardDescription className="text-base line-clamp-3">
+        <CardDescription className="text-base mt-2">
           {post.excerpt}
         </CardDescription>
       </CardHeader>

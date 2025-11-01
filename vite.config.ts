@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "docs",
   },
-  base: mode === "production" ? "/blog2" : "/",
+  base: mode === "production" ? "/blog2/" : "/",
   server: {
     host: "::",
     port: 8080,

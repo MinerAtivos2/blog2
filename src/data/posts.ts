@@ -29,7 +29,7 @@ export const posts: BlogPost[] = [
     content: "Conteúdo completo do post aqui...",
     author: "Maria Santos",
     date: "2024-03-10",
-    tags: ["Estratégia", "Diversificação", "Portfolio"],
+    tags: ["Estratégia", "Diversificação", "Portfolio", "teste"],
     readTime: "7 min"
   }
 ];

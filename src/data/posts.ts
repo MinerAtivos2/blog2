@@ -15,7 +15,7 @@ export const posts: BlogPost[] = [
     id: "1",
     title: "Análise do Mercado de Ações em 2024",
     excerpt: "Uma visão abrangente sobre as tendências do mercado de ações e as principais oportunidades para investidores em 2024.",
-    content: '<iframe src="https://minerativos2.github.io/site/2025/10/14/resumo_variacoes.html" width="100%" height="800px" style="border:none;"></iframe>',
+    content: '<iframe src="/posts/post2.html" width="100%" height="800px" style="border:none;"></iframe>',
     author: "João Silva",
     date: "2024-03-15",
     tags: ["Ações", "Mercado", "Análise"],

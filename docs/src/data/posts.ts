@@ -13,7 +13,7 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
   {
     id: "1",
-    title: "TESTE: AnÃ¡lise do Mercado de AÃ§Ãµes em 2024",
+    title: "TESTE2: AnÃ¡lise do Mercado de AÃ§Ãµes em 2024",
     excerpt: "Uma visÃ£o abrangente sobre as tendÃªncias do mercado de aÃ§Ãµes e as principais oportunidades para investidores em 2024.",
     content: '<iframe src="/posts/post2.html" width="100%" height="800px" style="border:none;"></iframe>',
     author: "JoÃ£o Silva",
@@ -33,5 +33,6 @@ export const posts: BlogPost[] = [
     readTime: "7 min"
   }
   ];
+
 
 

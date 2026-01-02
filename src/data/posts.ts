@@ -31,5 +31,15 @@ export const posts: BlogPost[] = [
     date: "2024-03-10",
     tags: ["Estratégia", "Diversificação", "Portfolio", "teste"],
     readTime: "7 min"
+  },
+  {
+    id: "3",
+    title: "Post de Teste",
+    excerpt: "Este é um post de teste.",
+    content: '<iframe src="/posts/post3.html" width="100%" height="800px" style="border:none;"></iframe>',
+    author: "Jules",
+    date: "2024-07-26",
+    tags: ["Teste"],
+    readTime: "1 min"
   }
   ];

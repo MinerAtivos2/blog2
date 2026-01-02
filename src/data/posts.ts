@@ -14,7 +14,7 @@ export const posts: BlogPost[] = [
   {
     id: "1",
     title: "AnÃ¡lise do Mercado de AÃ§Ãµes em 2024",
-    excerpt: "Uma visÃ£o abrangente sobre as tendÃªncias do mercado de aÃ§Ãµes e as principais oportunidades para investidores em 2024.",
+    excerpt: "Uma visÃ£o abrangente sobre as tendÃªncias do mercado de aÃ§Ãµes e as principais oportunidades para investidores em 2024. (teste)",
     content: '<iframe src="/posts/post2.html" width="100%" height="800px" style="border:none;"></iframe>',
     author: "JoÃ£o Silva",
     date: "2024-03-15",
@@ -224,5 +224,6 @@ de qualquer investimento.<a href="#fnref1" class="footnote-back"><U+21A9><U+FE0E
     readTime: "3 min"
   }
 ];
+
 
 

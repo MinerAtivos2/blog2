@@ -13,12 +13,12 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
   {
     id: "1",
-    title: "TESTE2: Análise do Mercado de Ações em 2025",
-    excerpt: "Uma visão abrangente sobre as tendências do mercado de ações e as principais oportunidades para investidores em 2024.",
+    title: "Radar intraday: outliers nas negociações de 03/07",
+    excerpt: "No mercado financeiro, nada é mais fascinante que um ativo que surpreende com um desempenho explosivo. Nesse sentido, o AZEV4 se destaca...",
     content: '<iframe src="/posts/post2.html" width="100%" height="800px" style="border:none;"></iframe>',
-    author: "João Silva",
-    date: "2024-03-15",
-    tags: ["Ações", "Mercado", "Análise"],
+    author: "MinerAtivos",
+    date: "2024-07-03",
+    tags: ["AZEV4", "Outliers", "Intraday"],
     readTime: "5 min",
     imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop"
   },

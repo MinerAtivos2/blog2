@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { posts } from "@/data/posts";
 import { useEffect } from "react";
+import { Header } from "@/components/Header";
 
 const Post = () => {
   const { id } = useParams();
@@ -38,20 +39,14 @@ const Post = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-8 px-4 shadow-lg">
-        <div className="container mx-auto max-w-4xl">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/")}
-            className="mb-4 text-primary-foreground hover:bg-primary-foreground/20"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar
-          </Button>
-        </div>
-      </header>
+      <Header size="small" />
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
+        <Button variant="ghost" onClick={() => navigate("/")} className="mb-8">
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Voltar para todos os posts
+        </Button>
+
         <article className="bg-card rounded-lg shadow-lg p-8 md:p-12 border-2">
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
             <div className="flex items-center gap-2">
@@ -88,9 +83,10 @@ const Post = () => {
               {post.excerpt}
             </p>
             
-            <div className="text-foreground leading-relaxed whitespace-pre-wrap">
-              {post.content}
-            </div>
+            <div
+              className="text-foreground leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
           </div>
 
           <div className="mt-12 pt-8 border-t border-border">

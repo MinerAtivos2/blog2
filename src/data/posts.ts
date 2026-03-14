@@ -52,5 +52,16 @@ export const posts: BlogPost[] = [
     tags: ["Tutorial", "Exemplo", "HTML"],
     readTime: "2 min",
     imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop"
+  },
+  {
+    id: "4",
+    title: "Post de Exemplo: chamando outra página",
+    excerpt: "Este é um exemplo de como adicionar um post usando HTML diretamente no código, conforme descrito no TUTORIAL.md.",
+    content: '<iframe src="https://minerativos2.github.io/blog/posts/mercado_260313.html" width="100%" height="800px" style="border:none;"></iframe>',
+    author: "Jules, o Assistente de Código",
+    date: "2024-07-29",
+    tags: ["Tutorial", "Exemplo", "HTML"],
+    readTime: "2 min",
+    imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop"
   }
 ];

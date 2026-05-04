@@ -63,5 +63,16 @@ export const posts: BlogPost[] = [
     tags: ["Tutorial", "Exemplo", "HTML"],
     readTime: "2 min",
     imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop"
+  },
+  {
+    id: "6",
+    title: "Guia Definitivo da Teoria de Markowitz",
+    excerpt: "Aprenda como aplicar a Teoria Moderna de Portfólio de Harry Markowitz para otimizar seus investimentos na B3.",
+    content: '<iframe src="/posts/mes1_semana1_post1_markowitz.html" width="100%" height="1000px" style="border:none;"></iframe>',
+    author: "Equipe Minerativos",
+    date: "2026-05-06",
+    tags: ["Otimização", "Markowitz", "Estratégia"],
+    readTime: "10 min",
+    imageUrl: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&h=400&fit=crop"
   }
 ];

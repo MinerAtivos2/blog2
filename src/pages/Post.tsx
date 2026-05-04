@@ -85,7 +85,12 @@ const Post = () => {
             
             <div
               className="text-foreground leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{
+                __html: post.content.replace(
+                  /src="\/posts\//g,
+                  `src="${import.meta.env.BASE_URL}posts/`
+                )
+              }}
             />
           </div>
 

@@ -44,7 +44,7 @@ export const posts: BlogPost[] = [
   },
   {
     id: "4",
-    title: "Post de Exemplo: HTML Direto",
+    title: "TESTE Post de Exemplo: HTML Direto",
     excerpt: "Este é um exemplo de como adicionar um post usando HTML diretamente no código, conforme descrito no TUTORIAL.md.",
     content: "<head>
     <meta charset="UTF-8">

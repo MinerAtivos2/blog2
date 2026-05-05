@@ -69,7 +69,7 @@ export const posts: BlogPost[] = [
     title: "Guia Definitivo da Teoria de Markowitz",
     excerpt: "Aprenda como aplicar a Teoria Moderna de Portfólio de Harry Markowitz para otimizar seus investimentos na B3.",
     content: '<iframe src="/posts/mes1_semana1_post1_markowitz.html" style="border:none;"></iframe>',
-    author: "Lucas",
+    author: "Minerativos",
     date: "2026-05-06",
     tags: ["Novidade","Otimização", "Markowitz", "Estratégia"],
     readTime: "10 min",

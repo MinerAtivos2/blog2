@@ -65,7 +65,7 @@ Este método é ideal para posts mais complexos ou quando o conteúdo HTML já e
 3.  **Abra o arquivo `src/data/posts.ts`**.
 4.  **Adicione um novo objeto `BlogPost`** ao array `posts`.
 5.  **Preencha os metadados** (título, autor, data, etc.).
-6.  **No campo `content`**, insira o código de um `iframe` que aponta para o seu arquivo HTML. O `src` do iframe deve ser o caminho a partir da pasta `public` (ex: `"/posts/meu-novo-post.html"`).
+6. **No campo `content`**, insira o código de um `iframe` que aponta para o seu arquivo HTML. O `src` do iframe deve ser o caminho a partir da pasta `public` (ex: `"/posts/meu-novo-post.html"`).
 
 **Exemplo:**
 
@@ -74,7 +74,7 @@ Este método é ideal para posts mais complexos ou quando o conteúdo HTML já e
   id: "5",
   title: "Post Avançado com Iframe",
   excerpt: "Este post demonstra como incorporar conteúdo a partir de um arquivo HTML externo usando um iframe.",
-  content: '<iframe src="/posts/meu-novo-post.html" width="100%" height="800px" style="border:none;"></iframe>',
+  content: '<iframe src="/posts/meu-novo-post.html"></iframe>',
   author: "Jules, o Assistente de Código",
   date: "2024-07-30",
   tags: ["Iframe", "Avançado"],
@@ -83,3 +83,29 @@ Este método é ideal para posts mais complexos ou quando o conteúdo HTML já e
 ```
 
 Lembre-se de que o arquivo `meu-novo-post.html` deve estar localizado em `public/posts/` para que o iframe funcione corretamente.
+
+## Observações Importantes
+
+*   **Caminho Base Automático:** O blog está configurado para funcionar tanto em ambiente local quanto no GitHub Pages (sob o caminho `/blog2/`). Ao adicionar links para arquivos na pasta `public/posts/`, sempre use o formato `/posts/nome-do-arquivo.html`. O código do blog detecta automaticamente se precisa prefixar o caminho com `/blog2/`.
+*   **Ajuste Automático de Altura:** Não é necessário definir `width` ou `height` manualmente no `iframe`. O blog possui um script que detecta quando o conteúdo do post termina de carregar e ajusta a altura do iframe automaticamente para evitar barras de rolagem duplas.
+*   **Estilo:** O conteúdo dentro do iframe não herda os estilos do blog principal. Certifique-se de que seu arquivo HTML inclua seu próprio CSS para manter a aparência desejada.
+
+## Publicando as Alterações
+
+O blog está configurado com **GitHub Actions**, o que significa que a publicação agora é **automática**.
+
+**Como funciona:**
+1.  Você faz as alterações nos arquivos (como adicionar um novo post no `src/data/posts.ts` ou um novo HTML em `public/posts/`).
+2.  Você faz o **Commit** e **Push** (ou salva a alteração diretamente pela interface web do GitHub).
+3.  O GitHub detecta a mudança e inicia automaticamente um processo de "Build" e "Deploy".
+4.  Em 1 ou 2 minutos, as alterações aparecerão no seu site.
+
+### Configuração Única no GitHub (Importante!)
+
+Para que o GitHub Actions funcione corretamente, você precisa garantir que o GitHub Pages esteja configurado para usar o Actions:
+
+1.  No seu repositório no GitHub, vá em **Settings** (Configurações).
+2.  No menu lateral esquerdo, clique em **Pages**.
+3.  Em **Build and deployment** > **Source**, altere de "Deploy from a branch" para **"GitHub Actions"**.
+
+Após essa mudança, você não precisará mais se preocupar em rodar `npm run build` manualmente ou atualizar a pasta `docs/`. O GitHub fará tudo por você!

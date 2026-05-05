@@ -13,9 +13,9 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
   {
     id: "1",
-    title: "Análise do Mercado de Ações em 2024 t2 ",
+    title: "Análise do Mercado de Ações em 2024 t2",
     excerpt: "Uma visão abrangente sobre as tendências do mercado de ações e as principais oportunidades para investidores em 2024.",
-    content: '<iframe src="/posts/post2.html" width="100%" height="800px" style="border:none;"></iframe>',
+    content: '<iframe src="/posts/post2.html" style="border:none;"></iframe>',
     author: "João Silva",
     date: "2024-03-15",
     tags: ["Ações", "Mercado", "Análise"],
@@ -44,7 +44,7 @@ export const posts: BlogPost[] = [
   },
   {
     id: "4",
-    title: "Post de Exemplo: HTML Direto",
+    title: "TESTE Post de Exemplo: HTML Direto",
     excerpt: "Este é um exemplo de como adicionar um post usando HTML diretamente no código, conforme descrito no TUTORIAL.md.",
     content: "teste",
     author: "Jules, o Assistente de Código",
@@ -57,11 +57,22 @@ export const posts: BlogPost[] = [
     id: "5",
     title: "Post de Exemplo: chamando outra página",
     excerpt: "Este é um exemplo de como adicionar um post usando HTML diretamente no código, conforme descrito no TUTORIAL.md.",
-    content: '<iframe src="/posts/mercado_260313.html" width="100%" height="800px" style="border:none;"></iframe>',
+    content: '<iframe src="/posts/mercado_260313.html" style="border:none;"></iframe>',
     author: "Lucas",
     date: "2026-03-13",
     tags: ["Tutorial", "Exemplo", "HTML"],
     readTime: "2 min",
     imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop"
+  },
+  {
+    id: "6",
+    title: "Guia Definitivo da Teoria de Markowitz",
+    excerpt: "Aprenda como aplicar a Teoria Moderna de Portfólio de Harry Markowitz para otimizar seus investimentos na B3.",
+    content: '<iframe src="/posts/mes1_semana1_post1_markowitz.html" style="border:none;"></iframe>',
+    author: "Minerativos",
+    date: "2026-05-06",
+    tags: ["Novidade","Otimização", "Markowitz", "Estratégia"],
+    readTime: "10 min",
+    imageUrl: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&h=400&fit=crop"
   }
 ];

@@ -65,7 +65,7 @@ Este método é ideal para posts mais complexos ou quando o conteúdo HTML já e
 3.  **Abra o arquivo `src/data/posts.ts`**.
 4.  **Adicione um novo objeto `BlogPost`** ao array `posts`.
 5.  **Preencha os metadados** (título, autor, data, etc.).
-6. **No campo `content`**, insira o código de um `iframe` que aponta para o seu arquivo HTML. O `src` do iframe deve ser o caminho a partir da pasta `public` (ex: `"/posts/meu-novo-post.html"`). **Importante:** O sistema cuidará automaticamente do caminho base para você.
+6. **No campo `content`**, insira o código de um `iframe` que aponta para o seu arquivo HTML. O `src` do iframe deve ser o caminho a partir da pasta `public` (ex: `"/posts/meu-novo-post.html"`).
 
 **Exemplo:**
 
@@ -74,7 +74,7 @@ Este método é ideal para posts mais complexos ou quando o conteúdo HTML já e
   id: "5",
   title: "Post Avançado com Iframe",
   excerpt: "Este post demonstra como incorporar conteúdo a partir de um arquivo HTML externo usando um iframe.",
-  content: '<iframe src="/posts/meu-novo-post.html" width="100%" height="800px" style="border:none;"></iframe>',
+  content: '<iframe src="/posts/meu-novo-post.html"></iframe>',
   author: "Jules, o Assistente de Código",
   date: "2024-07-30",
   tags: ["Iframe", "Avançado"],
@@ -86,9 +86,9 @@ Lembre-se de que o arquivo `meu-novo-post.html` deve estar localizado em `public
 
 ## Observações Importantes
 
-*   **Caminho Base:** O blog está configurado para funcionar tanto em ambiente local quanto no GitHub Pages (sob o caminho `/blog2/`). Ao adicionar links para arquivos na pasta `public/posts/`, sempre use o formato `/posts/nome-do-arquivo.html`. O código do blog (em `src/pages/Post.tsx`) está preparado para ajustar esse caminho automaticamente.
-*   **Ajuste de Altura:** No iframe, você pode ajustar o atributo `height` (ex: `height="1000px"`) conforme necessário para que todo o conteúdo do seu HTML seja visível sem barras de rolagem duplas.
-*   **Estilo:** O conteúdo dentro do iframe não herda os estilos do blog principal. Certifique-se de que seu arquivo HTML inclua seu próprio CSS ou use bibliotecas externas via CDN se necessário.
+*   **Caminho Base Automático:** O blog está configurado para funcionar tanto em ambiente local quanto no GitHub Pages (sob o caminho `/blog2/`). Ao adicionar links para arquivos na pasta `public/posts/`, sempre use o formato `/posts/nome-do-arquivo.html`. O código do blog detecta automaticamente se precisa prefixar o caminho com `/blog2/`.
+*   **Ajuste Automático de Altura:** Não é necessário definir `width` ou `height` manualmente no `iframe`. O blog possui um script que detecta quando o conteúdo do post termina de carregar e ajusta a altura do iframe automaticamente para evitar barras de rolagem duplas.
+*   **Estilo:** O conteúdo dentro do iframe não herda os estilos do blog principal. Certifique-se de que seu arquivo HTML inclua seu próprio CSS para manter a aparência desejada.
 
 ## Publicando as Alterações
 

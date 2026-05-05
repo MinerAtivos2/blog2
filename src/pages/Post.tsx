@@ -3,10 +3,11 @@ import { ArrowLeft, Calendar, Clock, Tag, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { posts } from "@/data/posts";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Header } from "@/components/Header";
 
 const Post = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const { id } = useParams();
   const navigate = useNavigate();
   const post = posts.find(p => p.id === id);
@@ -14,6 +15,49 @@ const Post = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  useEffect(() => {
+    const adjustIframeHeight = (iframe: HTMLIFrameElement) => {
+      try {
+        if (iframe.contentWindow && iframe.contentWindow.document.body) {
+          const height = iframe.contentWindow.document.body.scrollHeight;
+          iframe.style.height = `${height}px`;
+          iframe.style.overflow = 'hidden';
+        }
+      } catch (e) {
+        console.error("Não foi possível ajustar a altura do iframe:", e);
+      }
+    };
+
+    const handleIframeLoad = (e: Event) => {
+      adjustIframeHeight(e.target as HTMLIFrameElement);
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      const iframes = container.querySelectorAll('iframe');
+      iframes.forEach(iframe => {
+        iframe.addEventListener('load', handleIframeLoad);
+        // Garantir que a rolagem interna do iframe esteja desativada
+        iframe.setAttribute('scrolling', 'no');
+        iframe.style.width = '100%';
+
+        // Se o iframe já estiver carregado (cache)
+        if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+          adjustIframeHeight(iframe);
+        }
+      });
+    }
+
+    return () => {
+      if (container) {
+        const iframes = container.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+          iframe.removeEventListener('load', handleIframeLoad);
+        });
+      }
+    };
+  }, [post?.content]);
 
   if (!post) {
     return (
@@ -84,6 +128,7 @@ const Post = () => {
             </p>
             
             <div
+              ref={containerRef}
               className="text-foreground leading-relaxed"
               dangerouslySetInnerHTML={{
                 __html: post.content.replace(

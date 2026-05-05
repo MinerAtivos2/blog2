@@ -89,3 +89,15 @@ Lembre-se de que o arquivo `meu-novo-post.html` deve estar localizado em `public
 *   **Caminho Base:** O blog está configurado para funcionar tanto em ambiente local quanto no GitHub Pages (sob o caminho `/blog2/`). Ao adicionar links para arquivos na pasta `public/posts/`, sempre use o formato `/posts/nome-do-arquivo.html`. O código do blog (em `src/pages/Post.tsx`) está preparado para ajustar esse caminho automaticamente.
 *   **Ajuste de Altura:** No iframe, você pode ajustar o atributo `height` (ex: `height="1000px"`) conforme necessário para que todo o conteúdo do seu HTML seja visível sem barras de rolagem duplas.
 *   **Estilo:** O conteúdo dentro do iframe não herda os estilos do blog principal. Certifique-se de que seu arquivo HTML inclua seu próprio CSS ou use bibliotecas externas via CDN se necessário.
+
+## Publicando as Alterações
+
+Como este blog é um site estático hospedado no GitHub Pages (pasta `docs/`), as alterações feitas nos arquivos de código (como `src/data/posts.ts`) **não aparecem automaticamente** no site ar até que você gere um novo build.
+
+Sempre que terminar de adicionar ou modificar posts, execute o seguinte comando no terminal:
+
+```bash
+npm run build
+```
+
+Isso atualizará a pasta `docs/` com a versão mais recente do seu blog. Depois disso, basta fazer o commit e push dessas alterações para o seu repositório no GitHub.

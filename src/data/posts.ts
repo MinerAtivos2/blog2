@@ -46,7 +46,7 @@ export const posts: BlogPost[] = [
     id: "4",
     title: "Post de Exemplo: HTML Direto",
     excerpt: "Este é um exemplo de como adicionar um post usando HTML diretamente no código, conforme descrito no TUTORIAL.md.",
-    content: "<h2>Olá!!!Bem-vindo ao Post de Exemplo!</h2><p>Este conteúdo foi adicionado como uma string HTML diretamente no arquivo <code>posts.ts</code>.</p><p>A tag <code>dangerouslySetInnerHTML</code> no React foi usada para garantir que este HTML seja renderizado corretamente no navegador.</p><p>Você pode usar qualquer tag HTML aqui, como <strong>negrito</strong>, <em>itálico</em>, ou até mesmo listas:</p><ul><li>Item de lista número 1</li><li>Item de lista número 2</li><li>Item de lista número 3</li></ul><p>Este método é ideal para posts mais curtos e simples.</p>",
+    content: "<h2>Bem-vindo ao Post de Exemplo!</h2><p>Este conteúdo foi adicionado como uma string HTML diretamente no arquivo <code>posts.ts</code>.</p><p>A tag <code>dangerouslySetInnerHTML</code> no React foi usada para garantir que este HTML seja renderizado corretamente no navegador.</p><p>Você pode usar qualquer tag HTML aqui, como <strong>negrito</strong>, <em>itálico</em>, ou até mesmo listas:</p><ul><li>Item de lista número 1</li><li>Item de lista número 2</li><li>Item de lista número 3</li></ul><p>Este método é ideal para posts mais curtos e simples.</p>",
     author: "Jules, o Assistente de Código",
     date: "2024-07-29",
     tags: ["Tutorial", "Exemplo", "HTML"],

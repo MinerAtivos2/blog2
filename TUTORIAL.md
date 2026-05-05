@@ -92,12 +92,20 @@ Lembre-se de que o arquivo `meu-novo-post.html` deve estar localizado em `public
 
 ## Publicando as Alterações
 
-Como este blog é um site estático hospedado no GitHub Pages (pasta `docs/`), as alterações feitas nos arquivos de código (como `src/data/posts.ts`) **não aparecem automaticamente** no site ar até que você gere um novo build.
+O blog está configurado com **GitHub Actions**, o que significa que a publicação agora é **automática**.
 
-Sempre que terminar de adicionar ou modificar posts, execute o seguinte comando no terminal:
+**Como funciona:**
+1.  Você faz as alterações nos arquivos (como adicionar um novo post no `src/data/posts.ts` ou um novo HTML em `public/posts/`).
+2.  Você faz o **Commit** e **Push** (ou salva a alteração diretamente pela interface web do GitHub).
+3.  O GitHub detecta a mudança e inicia automaticamente um processo de "Build" e "Deploy".
+4.  Em 1 ou 2 minutos, as alterações aparecerão no seu site.
 
-```bash
-npm run build
-```
+### Configuração Única no GitHub (Importante!)
 
-Isso atualizará a pasta `docs/` com a versão mais recente do seu blog. Depois disso, basta fazer o commit e push dessas alterações para o seu repositório no GitHub.
+Para que o GitHub Actions funcione corretamente, você precisa garantir que o GitHub Pages esteja configurado para usar o Actions:
+
+1.  No seu repositório no GitHub, vá em **Settings** (Configurações).
+2.  No menu lateral esquerdo, clique em **Pages**.
+3.  Em **Build and deployment** > **Source**, altere de "Deploy from a branch" para **"GitHub Actions"**.
+
+Após essa mudança, você não precisará mais se preocupar em rodar `npm run build` manualmente ou atualizar a pasta `docs/`. O GitHub fará tudo por você!
